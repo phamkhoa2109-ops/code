@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FB Lead Scanner - Cài đặt</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Cấu hình quét Facebook Group</h1>
+
+      <label>Danh sách URL group (mỗi dòng 1 URL)</label>
+      <textarea id="groupUrls" rows="6" placeholder="https://www.facebook.com/groups/...\nhttps://www.facebook.com/groups/..." ></textarea>
+
+      <label>Tổ hợp từ khóa (mỗi dòng 1 tổ hợp, ngăn cách bằng dấu |)</label>
+      <textarea id="keywordSets" rows="6" placeholder="cần mua|loa bluetooth\ntư vấn|tai nghe\ntầm giá|loa" ></textarea>
+
+      <div class="grid">
+        <div>
+          <label>Chu kỳ quét (phút)</label>
+          <input id="scanIntervalMin" type="number" min="5" value="15" />
+        </div>
+        <div>
+          <label>Số group quét mỗi chu kỳ</label>
+          <input id="maxGroupsPerCycle" type="number" min="1" value="5" />
+        </div>
+        <div>
+          <label>Số lần cuộn/lazy load</label>
+          <input id="maxScrollRounds" type="number" min="1" value="4" />
+        </div>
+      </div>
+
+      <h2>Thông báo Telegram (tuỳ chọn)</h2>
+      <label>Bot token</label>
+      <input id="telegramBotToken" type="text" placeholder="123456:ABC-DEF..." />
+      <label>Chat ID</label>
+      <input id="telegramChatId" type="text" placeholder="123456789" />
+
+      <button id="saveBtn">Lưu cấu hình</button>
+      <p id="status"></p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
